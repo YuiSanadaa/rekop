@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>RestGo!</title>
+    <title>{{ config('app.name') }}</title>
     <link href="{{ asset('cms/css/lib/chartist/chartist.min.css') }}" rel="stylesheet">
     <link href="{{ asset('cms/css/lib/owl.carousel.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('cms/css/lib/owl.theme.default.min.css') }}" rel="stylesheet" />
@@ -239,8 +239,17 @@
                                 <li class="nav-label">Features</li>
                                 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Menu Ladang Karya</span></a>
                                     <ul aria-expanded="false" class="collapse">
-                                        <li><a href="#"><i class="fa fa-inbox"></i>&nbspList Anggota</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-circle"></i>&nbspTambah Anggota</a></li>
+                                        <li><a href="{{url('admin/quotes')}}"><i class="fa fa-inbox"></i>&nbspList Quotes</a></li>
+                                    </ul>
+                                </li>
+                                <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Menu Relasi Kopi</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="{{url('admin/menu')}}"><i class="fa fa-inbox"></i>&nbspList Menu</a></li>
+                                    </ul>
+                                </li>
+                                <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Kritik dan Saran</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="{{url('admin/pesan')}}"><i class="fa fa-inbox"></i>&nbspList Kritik</a></li>
                                     </ul>
                                 </li>
                             </nav>

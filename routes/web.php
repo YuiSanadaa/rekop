@@ -17,9 +17,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@admin');
 
-Route::name('admin')->group(function () {
-    Route::resource('quotes','QuotesController');
+Route::prefix('admin')->group(function () {
+    Route::resource('quotes', 'QuotesController');
+    Route::resource('menu', 'MenuController');
+    Route::resource('pesan', 'PesanController');
 });
+
 Route::get('/', function () {
     return view('home');
 });

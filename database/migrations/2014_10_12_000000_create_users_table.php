@@ -22,6 +22,14 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        DB::table('users')->insert(
+            array(
+                'name' => 'Developoer',
+                'email' => 'superuser@rekop.cf',
+                'password' => Hash::make("root"),
+            )
+        );
     }
 
     /**

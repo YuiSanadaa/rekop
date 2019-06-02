@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Quotes;
+use App\Menu;
 
-class QuotesController extends Controller
+class MenuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class QuotesController extends Controller
      */
     public function index()
     {
-        $data['quotes'] = Quotes::all();
-        return view('admin.quotes.index')->with($data);
+         $data['Menus'] = Menu::all();
+        return view('admin.menu.index')->with($data);
     }
 
     /**

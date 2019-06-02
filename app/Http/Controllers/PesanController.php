@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Quotes;
+use App\Pesan;
 
-class QuotesController extends Controller
+class PesanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class QuotesController extends Controller
      */
     public function index()
     {
-        $data['quotes'] = Quotes::all();
-        return view('admin.quotes.index')->with($data);
+         $data['pesans'] = Pesan::all();
+        return view('admin.pesan.index')->with($data);
     }
 
     /**
