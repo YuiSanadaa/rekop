@@ -14,9 +14,9 @@ class MenuController extends Controller
      */
     public function index()
     {
-         $data['Menus'] = Menu::all();
-        return view('admin.menu.index')->with($data);
-    }
+       $data['Menus'] = Menu::all();
+       return view('admin.menu.index')->with($data);
+   }
 
     /**
      * Show the form for creating a new resource.
@@ -36,7 +36,22 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $add = new Menu();
+        $add->nama = $r->input('nama');
+        $add->beans = $r->input('beans');
+        $add->price = $r->input('price');
+        if ($r->hasFile('image')) {
+            $image = $r->file('image');
+            // $imagedata = file_get_contents($image);
+            // $base64 = base64_encode($imagedata);
+            // $table->image = $base64;
+            $name = str_random().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/menu');
+            $imagePath = $destinationPath. "/".  $name;
+            $image->move($destinationPath, $name);
+            $add->image = $name;
+        }
+        $add = Save();
     }
 
     /**
@@ -70,8 +85,24 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+     $update = Menu::find($id);
+     $update->nama = $r->input('nama');
+     $update->beans = $r->input('beans');
+     $update->price = $r->input('price');
+     if ($r->hasFile('image')) {
+        $image = $r->file('image');
+            // $imagedata = file_get_contents($image);
+            // $base64 = base64_encode($imagedata);
+            // $table->image = $base64;
+        $name = str_random().'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('/menu');
+        $imagePath = $destinationPath. "/".  $name;
+        $image->move($destinationPath, $name);
+        $table->image = $name;
     }
+    $update = Save();
+    return back();
+}
 
     /**
      * Remove the specified resource from storage.
@@ -81,6 +112,8 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $table = Menu::find($id);        
+        $table->delete();//delete table
+        return back();
     }
 }

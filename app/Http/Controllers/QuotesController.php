@@ -34,9 +34,14 @@ class QuotesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $r)
     {
-        //
+        $add = new Quotes;
+        $add->nama = $r->input('nama');
+        $add->quotes = $r->input('quote');
+        $add = Save();
+        return back();
+
     }
 
     /**
@@ -47,7 +52,7 @@ class QuotesController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -58,7 +63,7 @@ class QuotesController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -70,8 +75,12 @@ class QuotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+      $update = Anggota::find($id);
+      $update->nama = $request->input('nama');
+      $update->alamat = $request->input('alamat');
+      $update->save();
+      return back();
+  }
 
     /**
      * Remove the specified resource from storage.
@@ -81,6 +90,8 @@ class QuotesController extends Controller
      */
     public function destroy($id)
     {
-        //
+     $table = Quotes::find($id);        
+        $table->delete();//delete table
+        return back();
     }
 }

@@ -14,9 +14,9 @@ class PesanController extends Controller
      */
     public function index()
     {
-         $data['pesans'] = Pesan::all();
-        return view('admin.pesan.index')->with($data);
-    }
+       $data['pesans'] = Pesan::all();
+       return view('admin.pesan.index')->with($data);
+   }
 
     /**
      * Show the form for creating a new resource.
@@ -36,7 +36,13 @@ class PesanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $add = new Pesan;
+        $add->name = $r->input('nama');
+        $add->phone = $r->input('notelp');
+        $add->email = $r->input('email');
+        $add->pesan = $r->input('pesan');
+        $add = Save();
+        return back();
     }
 
     /**
@@ -70,7 +76,13 @@ class PesanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update = Pesan::find($id);
+        $update->name = $r->input('nama');
+        $update->phone = $r->input('notelp');
+        $update->email = $r->input('email');
+        $update->pesan = $r->input('pesan');
+        $update = Save();
+        return back();
     }
 
     /**
@@ -81,6 +93,8 @@ class PesanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $table = Pesan::find($id);        
+        $table->delete();//delete table
+        return back();
     }
 }

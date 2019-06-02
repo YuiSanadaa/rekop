@@ -15,6 +15,10 @@ class CreatePesansTable extends Migration
     {
         Schema::create('pesans', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->integer('phone');
+            $table->string('email')->nullable();
+            $table->text('pesan');
             $table->timestamps();
         });
     }

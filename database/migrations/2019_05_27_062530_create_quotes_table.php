@@ -15,6 +15,9 @@ class CreateQuotesTable extends Migration
     {
         Schema::create('quotes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nama');
+            $table->text('quotes');
+            $table->enum('approve',['1', '2', '3'])->default('1');
             $table->timestamps();
         });
     }
