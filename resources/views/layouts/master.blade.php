@@ -178,150 +178,150 @@
                                                         </a>
                                                         <!-- Message -->
                                                         <a href="#">
-                                                            <div class="user-img"> <img src="{{asset('cms/images/users/2.jpg')}}" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
-                                                            <div class="mail-contnet">
-                                                                <h5>John Doe</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
-                                                            </div>
-                                                        </a>
-                                                        <!-- Message -->
-                                                        <a href="#">
-                                                            <div class="user-img"> <img src="{{asset('cms/images/users/3.jpg')}}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
-                                                            <div class="mail-contnet">
-                                                                <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
-                                                            </div>
-                                                        </a>
-                                                        <!-- Message -->
-                                                        <a href="#">
-                                                            <div class="user-img"> <img src="{{asset('cms/images/users/4.jpg')}}" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
-                                                            <div class="mail-contnet">
-                                                                <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <!-- End Messages -->
-                                    <!-- Profile -->
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('cms/images/users/5.jpg')}}" alt="user" class="profile-pic" /></a>
-                                        <div class="dropdown-menu dropdown-menu-right animated zoomIn">
-                                            <ul class="dropdown-user">
-                                                <li><a href="#"><i class="ti-user"></i> Profile</a></li>
-                                                <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
-                                                <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
-                                                <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
-                                                <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();" ><i class="fa fa-power-off"></i> Logout</a></li>
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                    {{ csrf_field() }}
-                                                </form>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                                          <div class="user-img"> <img src="{{asset('cms/images/users/2.jpg')}}" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                                          <div class="mail-contnet">
+                                                            <h5>John Doe</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
+                                                        </div>
+                                                    </a>
+                                                    <!-- Message -->
+                                                    <a href="#">
+                                                        <div class="user-img"> <img src="{{asset('cms/images/users/3.jpg')}}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                        <div class="mail-contnet">
+                                                            <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
+                                                        </div>
+                                                    </a>
+                                                    <!-- Message -->
+                                                    <a href="#">
+                                                        <div class="user-img"> <img src="{{asset('cms/images/users/4.jpg')}}" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                                        <div class="mail-contnet">
+                                                            <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- End Messages -->
+                                <!-- Profile -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('cms/images/users/5.jpg')}}" alt="user" class="profile-pic" /></a>
+                                    <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                                        <ul class="dropdown-user">
+                                            <li><a href="#"><i class="ti-user"></i> Profile</a></li>
+                                            <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
+                                            <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+                                            <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
+                                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();" ><i class="fa fa-power-off"></i> Logout</a></li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="left-sidebar">
+                    <!-- Sidebar scroll-->
+                    <div class="scroll-sidebar">
+                      <!-- Sidebar navigation-->
+                      <nav class="sidebar-nav">
+                        <ul id="sidebarnav">
+                            <li class="nav-devider"></li>
+                            <li class="nav-label">Home</li>
+                            <li> <a class="" href="" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></span></a></li>
+                            <li class="nav-label">Features</li>
+                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Menu Ladang Karya</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="{{url('admin/quotes')}}"><i class="fa fa-inbox"></i>&nbspList Quotes</a></li>
                                 </ul>
-                            </div>
+                            </li>
+                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Menu Relasi Kopi</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="{{url('admin/menu')}}"><i class="fa fa-inbox"></i>&nbspList Menu</a></li>
+                                </ul>
+                            </li>
+                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Kritik dan Saran</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="{{url('admin/pesan')}}"><i class="fa fa-inbox"></i>&nbspList Kritik</a></li>
+                                </ul>
+                            </li>
                         </nav>
+                        <!-- End Sidebar navigation -->
                     </div>
-                    <div class="left-sidebar">
-                        <!-- Sidebar scroll-->
-                        <div class="scroll-sidebar">
-                          <!-- Sidebar navigation-->
-                          <nav class="sidebar-nav">
-                            <ul id="sidebarnav">
-                                <li class="nav-devider"></li>
-                                <li class="nav-label">Home</li>
-                                <li> <a class="" href="" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></span></a></li>
-                                <li class="nav-label">Features</li>
-                                <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Menu Ladang Karya</span></a>
-                                    <ul aria-expanded="false" class="collapse">
-                                        <li><a href="{{url('admin/quotes')}}"><i class="fa fa-inbox"></i>&nbspList Quotes</a></li>
-                                    </ul>
-                                </li>
-                                <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Menu Relasi Kopi</span></a>
-                                    <ul aria-expanded="false" class="collapse">
-                                        <li><a href="{{url('admin/menu')}}"><i class="fa fa-inbox"></i>&nbspList Menu</a></li>
-                                    </ul>
-                                </li>
-                                <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Kritik dan Saran</span></a>
-                                    <ul aria-expanded="false" class="collapse">
-                                        <li><a href="{{url('admin/pesan')}}"><i class="fa fa-inbox"></i>&nbspList Kritik</a></li>
-                                    </ul>
-                                </li>
-                            </nav>
-                            <!-- End Sidebar navigation -->
-                        </div>
-                        <!-- End Sidebar scroll-->
-                    </div>
-                    <div class="page-wrapper">
-                        <!-- Bread crumb -->
-                        <div class="row page-titles">
-                            <div class="col-md-5 align-self-center">
-                                <h3 class="text-primary">Dashboard</h3> </div>
-                                <div class="col-md-7 align-self-center">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                                        <li class="breadcrumb-item active">Dashboard</li>
-                                    </ol>
-                                </div>
+                    <!-- End Sidebar scroll-->
+                </div>
+                <div class="page-wrapper">
+                    <!-- Bread crumb -->
+                    <div class="row page-titles">
+                        <div class="col-md-5 align-self-center">
+                            <h3 class="text-primary">{{ucfirst(Request::segment(2))}}</h3> </div>
+                            <div class="col-md-7 align-self-center">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                    <li class="breadcrumb-item active">{{ucfirst(Request::segment(2))}}</li>
+                                </ol>
                             </div>
-                            <!-- End Bread crumb -->
-                            <!-- Container fluid  -->
-                            <div class="container-fluid">
-                                @yield('content')
-                            </div>
-                            <!-- End Container fluid  -->
-                            <!-- footer -->
-                            <!-- End footer -->
                         </div>
+                        <!-- End Bread crumb -->
+                        <!-- Container fluid  -->
+                        <div class="container-fluid">
+                            @yield('content')
+                        </div>
+                        <!-- End Container fluid  -->
+                        <!-- footer -->
+                        <!-- End footer -->
                     </div>
+                </div>
 
-                    <footer class="footer"> © 2018 All rights reserved. Template designed by Technosoft</footer>
-                    <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js') }}"></script>
-                    <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/jquery/jquery.min.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/bootstrap/js/popper.min.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/bootstrap/js/bootstrap.min.js') }}"></script>
-                    <script src="{{ asset('cms/js/jquery.slimscroll.js') }}"></script>
-                    <script src="{{ asset('cms/js/sidebarmenu.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/sticky-kit-master/dist/sticky-kit.min.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/datamap/d3.min.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/datamap/topojson.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/datamap/datamaps.world.min.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/datamap/datamap-init.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/weather/jquery.simpleWeather.min.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/weather/weather-init.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/owl-carousel/owl.carousel.min.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/owl-carousel/owl.carousel-init.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/chartist/chartist.min.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/chartist/chartist-plugin-tooltip.min.js') }}"></script>
-                    <script src="{{ asset('cms/js/lib/chartist/chartist-init.js') }}"></script>
-                    <script src="{{ asset('cms/js/custom.min.js') }}"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-                    <script src="{{ asset('template/js/lib/datatables/datatables.min.js') }}"></script>
-                    <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js') }}"></script>
-                    <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js') }}"></script>
-                    <script src="{{ asset('template/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js') }}"></script>
-                    <script src="{{ asset('template/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js') }}"></script>
-                    <script src="{{ asset('template/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js') }}"></script>
-                    <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js') }}"></script>
-                    <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js') }}"></script>
-                    <script src="{{ asset('template/js/lib/datatables/datatables-init.js') }}"></script>
-                    <script type="text/javascript">
-                      $(document).ready(function(){
-                        $('#example23').dataTables({
-                          "ordering": false,
-                      });
-                        $('.js-example-basic-multiple').select2();
-                        $('.js-example-basic-single').select2();
-                    });
-                </script>
+                <footer class="footer"> © 2018 All rights reserved. Template designed by Technosoft</footer>
+                <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js') }}"></script>
+                <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/jquery/jquery.min.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/bootstrap/js/popper.min.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/bootstrap/js/bootstrap.min.js') }}"></script>
+                <script src="{{ asset('cms/js/jquery.slimscroll.js') }}"></script>
+                <script src="{{ asset('cms/js/sidebarmenu.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/sticky-kit-master/dist/sticky-kit.min.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/datamap/d3.min.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/datamap/topojson.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/datamap/datamaps.world.min.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/datamap/datamap-init.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/weather/jquery.simpleWeather.min.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/weather/weather-init.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/owl-carousel/owl.carousel.min.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/owl-carousel/owl.carousel-init.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/chartist/chartist.min.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/chartist/chartist-plugin-tooltip.min.js') }}"></script>
+                <script src="{{ asset('cms/js/lib/chartist/chartist-init.js') }}"></script>
+                <script src="{{ asset('cms/js/custom.min.js') }}"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+                <script src="{{ asset('template/js/lib/datatables/datatables.min.js') }}"></script>
+                <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js') }}"></script>
+                <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js') }}"></script>
+                <script src="{{ asset('template/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js') }}"></script>
+                <script src="{{ asset('template/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js') }}"></script>
+                <script src="{{ asset('template/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js') }}"></script>
+                <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js') }}"></script>
+                <script src="{{ asset('template/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js') }}"></script>
+                <script src="{{ asset('template/js/lib/datatables/datatables-init.js') }}"></script>
+                <script type="text/javascript">
+                  $(document).ready(function(){
+                    $('#example23').dataTables({
+                      "ordering": false,
+                  });
+                    $('.js-example-basic-multiple').select2();
+                    $('.js-example-basic-single').select2();
+                });
+            </script>
 
-            </body>
+        </body>
 
-            </html>
-            f
+        </html>
+        f
