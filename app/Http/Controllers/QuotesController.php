@@ -38,8 +38,8 @@ class QuotesController extends Controller
     {
         $add = new Quotes;
         $add->nama = $r->input('nama');
-        $add->quotes = $r->input('quote');
-        $add = Save();
+        $add->quotes = $r->input('quotes');
+        $add->Save();
         return back();
 
     }
@@ -75,9 +75,10 @@ class QuotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $update = Anggota::find($id);
+      $update = Quotes::find($id);
       $update->nama = $request->input('nama');
-      $update->alamat = $request->input('alamat');
+      $update->quotes = $request->input('quotes');
+      $update->approve = $request->input('approve');
       $update->save();
       return back();
   }
