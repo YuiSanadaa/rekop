@@ -34,10 +34,10 @@ class MenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $r)
     {
         $add = new Menu();
-        $add->nama = $r->input('nama');
+        $add->name = $r->input('name');
         $add->beans = $r->input('beans');
         $add->price = $r->input('price');
         if ($r->hasFile('image')) {
@@ -51,7 +51,8 @@ class MenuController extends Controller
             $image->move($destinationPath, $name);
             $add->image = $name;
         }
-        $add = Save();
+        $add->Save();
+        return back();
     }
 
     /**
@@ -83,10 +84,10 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $r, $id)
     {
      $update = Menu::find($id);
-     $update->nama = $r->input('nama');
+     $update->name = $r->input('name');
      $update->beans = $r->input('beans');
      $update->price = $r->input('price');
      if ($r->hasFile('image')) {
@@ -100,7 +101,7 @@ class MenuController extends Controller
         $image->move($destinationPath, $name);
         $table->image = $name;
     }
-    $update = Save();
+    $update->Save();
     return back();
 }
 

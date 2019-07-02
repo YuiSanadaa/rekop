@@ -139,6 +139,9 @@
         <li>
             <a href="{{URL('admin/quotes')}}"><i class="fa fa-file-text"></i> <span>Quotes</span></a>
         </li>
+        <li>
+          <a href="{{URL('admin/menu')}}"><i class="fa fa-file-text"></i> <span>Menu</span></a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
