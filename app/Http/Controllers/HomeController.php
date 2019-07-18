@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['quotes'] = Quotes::All();
+        $data['quotes'] = Quotes::where('approve', 2)->get();
         return view('home')->with($data);
     }
 
