@@ -51,51 +51,14 @@
         <div class=" align-left aside-content">
           <h2 class="mbr-title pt-2 mbr-fonts-style display-2">
           Sejarah Kopi</h2>
-          <div class="mbr-section-text">
-            <p class="mbr-text mb-5 pt-3 mbr-light mbr-fonts-style display-5">
-              Pembukaan Sejarah
-            </p>
-          </div>
           <div class="block-content">
-            <div class="card p-3 pr-3">
-              <div class="media">
-                <div class=" align-self-center card-img pb-3">
-                  <span class="mbri-extension mbr-iconfont"></span>
-                </div>     
-                <div class="media-body">
-                  <h4 class="card-title mbr-fonts-style display-7">
-                    Over 400 Amazing Blocks
-                  </h4>
-                </div>
-              </div>                
+            <div class="card p-3 pr-3">   
               <div class="card-box">
                 <p class="block-text mbr-fonts-style display-7">
-                 Mobirise offers several themes that include sliders, galleries, article blocks, counters, accordions, video, animated text, live filtered tables, shop, contact forms, lightbox, testimonials, timelines, google map, progress bars and more. 
+                 Sejarah kopi telah dicatat sejauh pada abad ke-9. Pertama kali, kopi hanya ada di Ethiopia, di mana biji-bijian asli ditanam oleh orang Ethiopia dataran tinggi. Akan tetapi, ketika bangsa Arab mulai meluaskan perdagangannya, biji kopi pun telah meluas sampai ke Afrika Utara dan biji kopi di sana ditanam secara massal. Dari Afrika Utara itulah biji kopi mulai meluas dari Asia sampai pasaran Eropa dan ketenarannya sebagai minuman mulai menyebar
                </p>
              </div>
            </div>
-           <div class="card p-3 pr-3">
-            <div class="media">
-              <div class="align-self-center card-img pb-3">
-                <span class="mbri-drag-n-drop2 mbr-iconfont"></span>
-              </div>     
-              <div class="media-body">
-                <h4 class="card-title mbr-fonts-style display-7">
-                  Easy and Simple to Use
-                </h4>
-              </div>
-            </div>                
-            <div class="card-box">
-              <p class="block-text mbr-fonts-style display-7">
-                Cut down the development time with drag-and-drop website builder. Drop the blocks into the page, edit content inline and publish - no technical skills required.
-              </p>
-            </div>
-            <div class="card-box">
-             <p class="block-test mbr-fonts-style display-7">
-              Tambaham
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -109,6 +72,7 @@
     <h2 class="pb-3 mbr-fonts-style mbr-white align-center display-2">
     Ladang Karya</h2>
     <h3 class="mbr-section-subtitle mbr-light pb-3 mbr-fonts-style mbr-white align-center display-5">Tempatnya kolega untuk mengekspresikan diri</h3>
+    @foreach($quotes as $q)
     <div class="col-md-10 testimonials-container"> 
       <div class="testimonials-item">
         <div class="user row">
@@ -120,39 +84,20 @@
           <div class="testimonials-caption col-lg-9 col-md-8">
             <div class="user_text ">
               <p class="mbr-fonts-style  display-7">
-               <em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nostrum, quos voluptas fugiat blanditiis, temporibus expedita cumque doloribus ea, officiis consequuntur repellat minus ad veritatis? Facere similique accusamus, accusantium sunt!"</em>
+               <em>"{{$q->quotes}}"</em>
              </p>
            </div>
            <div class="user_name mbr-bold mbr-fonts-style align-left pt-3 display-7">
-             Helen
+             {{$q->nama}}
            </div>
            <div class="user_desk mbr-light mbr-fonts-style align-left pt-2 display-7">
-             DESIGNER
+             KOLEGA
            </div>
-         </div>
-       </div>
-     </div><div class="testimonials-item">
-      <div class="user row">
-        <div class="col-lg-3 col-md-4">
-          <div class="user_image">
-            <img src="assets/images/face1.jpg">
-          </div>
-        </div>
-        <div class="testimonials-caption col-lg-9 col-md-8">
-          <div class="user_text">
-            <p class="mbr-fonts-style  display-7">
-             <em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nostrum, quos voluptas fugiat blanditiis, temporibus expedita cumque doloribus ea, officiis consequuntur repellat minus ad veritatis? Facere similique accusamus, accusantium sunt!"</em>
-           </p>
-         </div>
-         <div class="user_name mbr-bold mbr-fonts-style align-left pt-3 display-7">
-           Alex
-         </div>
-         <div class="user_desk mbr-light mbr-fonts-style align-left pt-2 display-7">
-           DEVELOPER
          </div>
        </div>
      </div>
-   </div></div>
+  </div>
+  @endforeach
  </div>
 </section>
 <section class="mbr-section form4 cid-rrjcyGfRek" id="form4-b">
