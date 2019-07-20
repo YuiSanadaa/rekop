@@ -96,7 +96,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="">
-                  <a href="" class="btn btn-block btn-default btn-flat">Sign out</a>
+                  <a href="{{url('/dashboard')}}" class="btn btn-block btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

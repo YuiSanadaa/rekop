@@ -98,6 +98,30 @@
      </div>
   </div>
   @endforeach
+  <div class="col-md-10 testimonials-container" style="padding-top: 10px">
+    <h3 class="mbr-section-subtitle mbr-light pb-3 mbr-fonts-style mbr-white align-center display-5">Kirimkan Karyamu!</h3>
+    <form action="{{route('quotes.store')}}" method="post" class="mbr-form form-with-styler">
+      @csrf
+      <div class="row">
+        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">
+          Thanks for filling out the form!
+        </div>
+        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control input display-7" name="nama" placeholder="Your Name" required="required">
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control input display-7" name="quotes" placeholder="Your Quotes" required="required">
+        </div>
+      </div>
+      <div class="col-md-12 input-group-btn  mt-2 align-center">
+        <button type="submit" class="btn btn-primary btn-form display-4">Kirim Karya</button>
+      </div>
+    </form>
+  </div>
  </div>
 </section>
 <section class="mbr-section form4 cid-rrjcyGfRek" id="form4-b">
