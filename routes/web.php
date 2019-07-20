@@ -11,12 +11,12 @@
 |
 */
 	
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
 Route::get('/admin', 'HomeController@admin');
+Route::get('/dashboard','HomeController@dashboard');
 
 Route::prefix('admin')->group(function () {
     Route::resource('quotes', 'QuotesController');
@@ -24,6 +24,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('pesan', 'PesanController');
 });
 
-Route::get('/', function () {
-    return redirect('home');
-});
+Route::get('/', 'MenuController@user');
+// Route::get('/', function () {
+//     return view('home');
+// });

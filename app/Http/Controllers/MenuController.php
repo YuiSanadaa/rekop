@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Menu;
+use App\Quotes;
 
 class MenuController extends Controller
 {
@@ -27,6 +28,7 @@ class MenuController extends Controller
     {
         //
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -103,7 +105,7 @@ class MenuController extends Controller
     }
     $update->Save();
     return back();
-}
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -116,5 +118,11 @@ class MenuController extends Controller
         $table = Menu::find($id);        
         $table->delete();//delete table
         return back();
+    }
+
+    public function user()
+    {
+        $data['quotes'] = Quotes::where('approve', 2)->get();
+        return view('home')->with($data);
     }
 }
