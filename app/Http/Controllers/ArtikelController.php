@@ -3,22 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Menu;
+use App\Artikel;
 
-class MenuController extends Controller
+class ArtikelController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    
     public function index()
     {
-     $data['Menus'] = Menu::all();
-     return view('admin.menu.index')->with($data);
- }
+        $data['artikels'] = Artikel::all();
+        return view('admin.artikel.index')->with($data);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -30,7 +28,6 @@ class MenuController extends Controller
         //
     }
 
-
     /**
      * Store a newly created resource in storage.
      *
@@ -39,17 +36,16 @@ class MenuController extends Controller
      */
     public function store(Request $r)
     {
-        $add = new Menu();
-        $add->name = $r->input('name');
-        $add->beans = $r->input('beans');
-        $add->price = $r->input('price');
+        $add = new Artikel();
+        $add->judul = $r->input('judul');
+        $add->isi = $r->input('isi');        
         if ($r->hasFile('image')) {
             $image = $r->file('image');
             // $imagedata = file_get_contents($image);
             // $base64 = base64_encode($imagedata);
             // $table->image = $base64;
             $name = str_random().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/menu');
+            $destinationPath = public_path('/artikel');
             $imagePath = $destinationPath. "/".  $name;
             $image->move($destinationPath, $name);
             $add->image = $name;
@@ -76,8 +72,8 @@ class MenuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+
     }
 
     /**
@@ -89,24 +85,24 @@ class MenuController extends Controller
      */
     public function update(Request $r, $id)
     {
-       $update = Menu::find($id);
-       $update->name = $r->input('name');
-       $update->beans = $r->input('beans');
-       $update->price = $r->input('price');
-       if ($r->hasFile('image')) {
-        $image = $r->file('image');
+        $update = Artikel::find($id);
+        $update = new Artikel();
+        $update->judul = $r->input('judul');
+        $update->isi = $r->input('isi');        
+        if ($r->hasFile('image')) {
+            $image = $r->file('image');
             // $imagedata = file_get_contents($image);
             // $base64 = base64_encode($imagedata);
             // $table->image = $base64;
-        $name = str_random().'.'.$image->getClientOriginalExtension();
-        $destinationPath = public_path('/menu');
-        $imagePath = $destinationPath. "/".  $name;
-        $image->move($destinationPath, $name);
-        $update->image = $name;
+            $name = str_random().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/artikel');
+            $imagePath = $destinationPath. "/".  $name;
+            $image->move($destinationPath, $name);
+            $update->image = $name;
+        }        
+        $update->Save();
+        return back();
     }
-    $update->Save();
-    return back();
-}
 
     /**
      * Remove the specified resource from storage.
@@ -116,14 +112,8 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        $table = Menu::find($id);        
+        $table = Artikel::find($id);        
         $table->delete();//delete table
         return back();
-    }
-
-    public function user()
-    {
-        $data['quotes'] = Quotes::where('approve', 2)->get();
-        return view('home')->with($data);
     }
 }

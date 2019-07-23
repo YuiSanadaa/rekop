@@ -25,6 +25,7 @@ Route::prefix('admin')->group(function () {
 	Route::get('quotes', 'QuotesController@index');
 	Route::resource('menu', 'MenuController');
 	Route::get('pesan', 'PesanController@index');
+	Route::resource('artikel', 'ArtikelController');
 });
 Route::resource('pesan', 'PesanController');
 Route::resource('quotes', 'QuotesController');

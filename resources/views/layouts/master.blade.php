@@ -137,10 +137,16 @@
             <a href="{{URL('/admin')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
           </li>
           <li>
-            <a href="{{URL('admin/quotes')}}"><i class="fa fa-file-text"></i> <span>Quotes</span></a>
+            <!-- <a href="{{URL('admin/users')}}"><i class="fa fa-users"></i> <span>Users</span></a> -->
           </li>
           <li>
-            <a href="{{URL('admin/menu')}}"><i class="fa fa-file-text"></i> <span>Menu</span></a>
+            <a href="{{URL('admin/quotes')}}"><i class="fa fa-quote-right"></i> <span>Quotes</span></a>
+          </li>
+          <li>
+            <a href="{{URL('admin/menu')}}"><i class="fa fa-book"></i> <span>Menu</span></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-align-center "></i> <span>Artikel</span></a>
           </li>
           <li>
             <a href="{{URL('admin/pesan')}}"><i class="fa fa-file-text"></i> <span>Kritik dan Saran</span></a>
