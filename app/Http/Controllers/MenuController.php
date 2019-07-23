@@ -13,11 +13,13 @@ class MenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
     public function index()
     {
-       $data['Menus'] = Menu::all();
-       return view('admin.menu.index')->with($data);
-   }
+     $data['Menus'] = Menu::all();
+     return view('admin.menu.index')->with($data);
+ }
 
     /**
      * Show the form for creating a new resource.
@@ -52,7 +54,7 @@ class MenuController extends Controller
             $imagePath = $destinationPath. "/".  $name;
             $image->move($destinationPath, $name);
             $add->image = $name;
-        }
+        }        
         $add->Save();
         return back();
     }
@@ -88,11 +90,11 @@ class MenuController extends Controller
      */
     public function update(Request $r, $id)
     {
-     $update = Menu::find($id);
-     $update->name = $r->input('name');
-     $update->beans = $r->input('beans');
-     $update->price = $r->input('price');
-     if ($r->hasFile('image')) {
+       $update = Menu::find($id);
+       $update->name = $r->input('name');
+       $update->beans = $r->input('beans');
+       $update->price = $r->input('price');
+       if ($r->hasFile('image')) {
         $image = $r->file('image');
             // $imagedata = file_get_contents($image);
             // $base64 = base64_encode($imagedata);
@@ -105,7 +107,7 @@ class MenuController extends Controller
     }
     $update->Save();
     return back();
-    }
+}
 
     /**
      * Remove the specified resource from storage.

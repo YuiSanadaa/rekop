@@ -136,31 +136,24 @@
           <div class="icon-block pb-3 align-left">
           </div>
         </div>
-        <div data-form-type="formoid">
-          <!---Formbuilder Form--->
-          <form action="https://mobirise.com/" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="BgUKdaE2K3FdmzJJdiXJgBpU3EUwojSfRDSm23i+9IocusKP9ThFwHu8U2eiTsF+/1oALfP2lldG7wUxkuvs0M3z391AU19n1S9+rhlZnVxQapMgaDGLLzWlFGT1NlMS">
-            <div class="row">
-              <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
-              <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
-              </div>
-            </div>
+          <form action="{{route('pesan.store')}}" method="POST" class="mbr-form">
+            @csrf
             <div class="dragArea row">
-              <div class="col-md-6  form-group" data-for="name">
-                <input type="text" name="name" placeholder="Your Name" data-form-field="Name" required="required" class="form-control input display-7" id="name-form4-b">
+              <div class="col-md-6  form-group">
+                <input type="text" name="nama" placeholder="Your Name" required="required" class="form-control input display-7">
               </div>
-              <div class="col-md-6  form-group" data-for="phone">
-                <input type="text" name="phone" placeholder="Phone" data-form-field="Phone" required="required" class="form-control input display-7" id="phone-form4-b">
+              <div class="col-md-6  form-group">
+                <input type="number" name="notelp" placeholder="Phone" required="required" class="form-control input display-7">
               </div>
-              <div data-for="email" class="col-md-12  form-group">
-                <input type="text" name="email" placeholder="Email" data-form-field="Email" class="form-control input display-7" required="required" id="email-form4-b">
+              <div class="col-md-12  form-group">
+                <input type="email" name="email" placeholder="Email" class="form-control input display-7" required="required">
               </div>
-              <div data-for="message" class="col-md-12  form-group">
-                <textarea name="message" placeholder="Message" data-form-field="Message" class="form-control input display-7" id="message-form4-b"></textarea>
+              <div class="col-md-12  form-group">
+                <textarea name="pesan" placeholder="Message" class="form-control input display-7"></textarea>
               </div>
               <div class="col-md-12 input-group-btn  mt-2 align-center"><button type="submit" class="btn btn-primary btn-form display-4">Kirim Email</button></div>
             </div>
-          </form><!---Formbuilder Form--->
-        </div>
+          </form>
       </div>
     </div>
   </div>

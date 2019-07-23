@@ -1,31 +1,32 @@
 @extends('layouts.master')
 @section('content')
-	<div class="content-wrapper">
-		<div class="content">
-			<div class="box">
-				<div class="box-header">
-					<button class="pull-right btn btn-primary" data-toggle="modal" data-target="#AddMenu"><i class="fa fa-plus"></i> New Menu</button>
-				</div>
-				<div class="box-body">
-					<table class="table table-striped table-bordered" id="tableMenu">
-						<thead>
-							<tr>
-								<th>No</th>
-								<th>Nama</th>
-								<th>Beans</th>
-								<th>Harga</th>
-								<th>Image</th>
-								<th>Action</th>
-							</tr>
-						</thead>
-						<tbody>
-							@foreach($Menus as $q)
-							<tr>
-								<td>{{$loop->iteration}}</td>
-								<td>{{$q->name}}</td>
-								<td>{{$q->beans}}</td>
-								<td>{{$q->price}}</td>
-								<td><img src=""></td>
+<div class="content-wrapper">
+	<div class="content">
+		<div class="box">
+			<div class="box-header">
+				<button class="pull-right btn btn-primary" data-toggle="modal" data-target="#AddMenu"><i class="fa fa-plus"></i> New Menu</button>
+			</div>
+			<div class="box-body">
+				<table class="table table-striped table-bordered" id="tableMenu">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Nama</th>
+							<th>Beans</th>
+							<th>Harga</th>
+							<th>Image</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach($Menus as $q)
+						<tr>
+							<td>{{$loop->iteration}}</td>
+							<td>{{$q->name}}</td>
+							<td>{{$q->beans}}</td>
+							<td>{{$q->price}}</td>
+							<td><a href="{{ asset('menu/'.$q->image) }}" data-sub-html="{{$q->nama}}">
+								<img class="img-responsive img-circle" src="{{ asset('menu/'.$q->image) }}" style="width: 80px; height: 80px;"></td>									
 								<td>
 									<button class="btn btn-circle btn-warning" data-toggle="modal" data-target="#EditMenu{{$q->id}}"><i class="fa fa-pencil"></i></button>
 									<button class="btn btn-circle btn-danger" data-toggle="modal" data-target="#DeleteMenu{{$q->id}}"><i class="fa fa-trash"></i></button>
@@ -45,7 +46,7 @@
 					<button class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">New Menu</h4>
 				</div>
-				<form action="{{route('menu.store')}}" method="post">
+				<form action="{{route('menu.store')}}" method="post" enctype="multipart/form-data">
 					@csrf
 					<div class="modal-body">
 						<div class="row">
@@ -70,6 +71,14 @@
 							</div>
 							<div class="col-md-9">
 								<input type="text" class="form-control" name="price">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<h5>Foto</h5>
+							</div>
+							<div class="col-md-9">
+								<input type="file" name="image" class="form-control" id="exampleInputFile">
 							</div>
 						</div>
 					</div>
@@ -152,9 +161,9 @@
 		</div>
 	</div>	
 	@endforeach
-@endsection
-@section('foot-content')
-<script>
-	$('#tableMenu').DataTable();
-</script>
-@endsection
+	@endsection
+	@section('foot-content')
+	<script>
+		$('#tableMenu').DataTable();
+	</script>
+	@endsection

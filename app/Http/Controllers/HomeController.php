@@ -22,11 +22,6 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        $data['quotes'] = Quotes::where('approve', 2)->get();
-        return view('home')->with($data);
-    }
 
     public function admin(){
         return view('admin.dashboard');
