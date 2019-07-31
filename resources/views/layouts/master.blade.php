@@ -146,7 +146,7 @@
             <a href="{{URL('admin/menu')}}"><i class="fa fa-book"></i> <span>Menu</span></a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-align-center "></i> <span>Artikel</span></a>
+            <a href="{{URL('admin/artikel')}}"><i class="fa fa-align-center "></i> <span>Artikel</span></a>
           </li>
           <li>
             <a href="{{URL('admin/pesan')}}"><i class="fa fa-file-text"></i> <span>Kritik dan Saran</span></a>
