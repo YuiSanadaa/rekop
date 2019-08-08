@@ -23,7 +23,7 @@
 							<td>{{$loop->iteration}}</td>
 							<td>{{$ar->judul}}</td>
 							<td>{{$ar->image}}</td>
-							<td>{{$ar->isi}}</td>
+							<td>{{Str::limit($ar->isi, 45)}}<a data-toggle="modal" data-target="#ReadMore" style="cursor: pointer;">Read More</a></td>
 							<td></td>
 						</tr>
 						@endforeach
@@ -33,6 +33,65 @@
 		</div>
 	</div>
 </div>
+@foreach($artikels as $at)
+<div class="modal fade" id="ReadMore" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Detail isi Artikel</h4>
+			</div>
+			<div class="modal-body">
+				<center><b>{{$at->judul}}</b></center>
+				<p>{{$at->isi}}</p>
+			</div>	
+		</div>
+	</div>
+</div>
+@endforeach
+<div class="modal fade" id="AddArtikel" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">New Artikel</h4>
+				</div>
+				<form action="{{route('artikel.store')}}" method="post">
+					@csrf
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-3">
+								<h5>Judul</h5>
+							</div>
+							<div class="col-md-9">
+								<input type="text" class="form-control" name="judul">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<h5>Images</h5>
+							</div>
+							<div class="col-md-9">
+								<input type="file" class="form-control" name="image">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<h5>Isi</h5>
+							</div>
+							<div class="col-md-9">
+								<textarea class="form-control" name="isi" rows="3"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						<button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 @endsection
 @section('foot-content')
 <script>
