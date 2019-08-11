@@ -28,13 +28,12 @@
           <span class="navbar-logo">
            <img src="assets/images/33834-3-coffee-logo-clipart-122x206.png" alt="Mobirise" title="" style="height: 3.8rem;">
          </span>
-         <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="{{route('home')}}">Relasi Kopi</a></span>
+         <span class="navbar-caption-wrap"><a class="navbar-caption text-white" href="{{route('home')}}">Relasi Kopi</a></span>
        </div>
      </div>
      <div class="collapse navbar-collapse" id="navbarSupportedContent">  
-
-      {{-- Button Lau Disini --}}
-
+      <span class="navbar-caption-wrap" style="padding-right: 30px"><a class="navbar-caption text-white display-4" href="{{url('/rekopmenu')}}">Menu</a></span>
+      <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="">Artikel</a></span>
      </div>
   </nav>
 </section>

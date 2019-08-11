@@ -22,7 +22,8 @@
 						<tr>
 							<td>{{$loop->iteration}}</td>
 							<td>{{$ar->judul}}</td>
-							<td>{{$ar->image}}</td>
+							<td><a href="{{ asset('artikel/'.$ar->image) }}" data-sub-html="{{$ar->judul}}">
+								<img class="img-responsive img-circle" src="{{ asset('artikel/'.$ar->image) }}" style="width: 80px; height: 80px;"></td>
 							<td>{{Str::limit($ar->isi, 45)}}<a data-toggle="modal" data-target="#ReadMore" style="cursor: pointer;">Read More</a></td>
 							<td></td>
 						</tr>
@@ -72,7 +73,7 @@
 								<h5>Images</h5>
 							</div>
 							<div class="col-md-9">
-								<input type="file" class="form-control" name="image">
+								<input type="file" class="form-control" name="image" id="exampleInputFile">
 							</div>
 						</div>
 						<div class="row">

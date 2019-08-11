@@ -57,36 +57,6 @@ class MenuController extends Controller
         $add->Save();
         return back();
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $r, $id)
     {
        $update = Menu::find($id);
@@ -125,5 +95,10 @@ class MenuController extends Controller
     {
         $data['quotes'] = Quotes::where('approve', 2)->get();
         return view('home')->with($data);
+    }
+    public function usermenu()
+    {
+        $data['menu'] = Menu::all();
+        return view('menu')->with($data);
     }
 }
