@@ -116,4 +116,9 @@ class ArtikelController extends Controller
         $table->delete();//delete table
         return back();
     }
+    public function artikeluser()
+    {
+        $data['artikel'] = Artikel::All();
+        return view('artikel')->with($data);
+    }
 }

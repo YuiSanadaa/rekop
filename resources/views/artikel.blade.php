@@ -7,6 +7,7 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px;
+  background: #f2e7e6
 }
 
 .card-indiv:hover {
@@ -54,20 +55,14 @@
   </nav>
 </section>
 <section class="features11 cid-rrj9BkYJOI" id="features11-8">
-  <div class="container-fluid ">  
-    <div class="row">
-      @foreach($menu as $me)
-        <div class="col-md-3">
-          <div class="card-indiv">
-            <img class="img-card" src="{{ asset('menu/'.$me->image) }}" alt="Avatar" style="width:100%">
-            <div class="container">
-              <h4><b>{{$me->name}}</b></h4>
-              <h6>{{$me->beans}}</h6> 
-              <p>Rp. {{$me->price}}</p> 
-            </div>
-          </div>
-        </div>
-      @endforeach
+  <div class="container-fluid " style="padding-left: 50px; padding-right: 50px;">  
+    <div class="card-indiv">
+      <div class="container-fluid">
+      @foreach($artikel as $ar)
+        <center><h3 style="padding-top: 15px;">{{$ar->judul}}</h3></center>
+        <p style="text-align: justify; padding-bottom: 15px;padding-left: 50px;padding-right: 50px;">{{$ar->isi}}</p>
+        @endforeach
+      </div>
     </div>
   </div>          
 </section>

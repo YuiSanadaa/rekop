@@ -30,4 +30,5 @@ Route::prefix('admin')->group(function () {
 Route::resource('pesan', 'PesanController');
 Route::resource('quotes', 'QuotesController');
 Route::get('/rekopmenu', 'MenuController@usermenu');
+Route::get('/rekopartikel', 'ArtikelController@artikeluser');
 Route::get('/', 'MenuController@user')->name('home');

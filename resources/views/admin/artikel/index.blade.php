@@ -57,7 +57,7 @@
 					<button class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">New Artikel</h4>
 				</div>
-				<form action="{{route('artikel.store')}}" method="post">
+				<form action="{{route('artikel.store')}}" method="post" enctype="multipart/form-data">
 					@csrf
 					<div class="modal-body">
 						<div class="row">
